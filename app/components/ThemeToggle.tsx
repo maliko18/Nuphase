@@ -3,8 +3,15 @@
 import { Button } from "@heroui/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { SVGProps } from "react";
 
-export const SunIcon = ({ size = 24, width, height, ...props }) => (
+interface IconProps extends SVGProps<SVGSVGElement> {
+  size?: number;
+  width?: number;
+  height?: number;
+}
+
+export const SunIcon = ({ size = 24, width, height, ...props }: IconProps) => (
   <svg
     aria-hidden="true"
     focusable="false"
@@ -21,7 +28,7 @@ export const SunIcon = ({ size = 24, width, height, ...props }) => (
   </svg>
 );
 
-export const MoonIcon = ({ size = 24, width, height, ...props }) => (
+export const MoonIcon = ({ size = 24, width, height, ...props }: IconProps) => (
   <svg
     aria-hidden="true"
     focusable="false"
